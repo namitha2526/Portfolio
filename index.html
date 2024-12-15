@@ -1,0 +1,385 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Star Hotel Menu</title>
+    <style>
+        /* Global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Body styles */
+        body {
+            background-color: #3E2723; /* Deep brown */
+            color: #FAFAFA; /* Light text */
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #5D4037; /* Chocolate brown */
+            color: #FFD54F; /* Golden yellow */
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px #000;
+        }
+
+        header p {
+            font-size: 1.5rem;
+        }
+
+        /* Menu Section */
+        section.menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .menu-item {
+            background-color: #FFF8E1; /* Light cream */
+            border: 1px solid #E0E0E0;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            margin: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .menu-item .content {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .menu-item h3 {
+            font-size: 1.8rem;
+            color: #D84315; /* Burnt orange */
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item p {
+            font-size: 1rem;
+            color: #5D4037; /* Chocolate brown */
+        }
+
+        .menu-item .price {
+            font-size: 1.4rem;
+            color: #FF7043; /* Coral orange */
+            font-weight: bold;
+        }
+
+        .menu-item .currency {
+            color: #1B5E20; /* Forest green */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #5D4037;
+            color: #FFD54F;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section.menu {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-item {
+                width: 90%;
+            }
+        }
+        h1{color:aqua;font-style: italic;text-align: center;}
+        h2{color:aqua;font-style: italic;text-align: center;}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>5-Star Hotel Menu</h1>
+    <img src="https://www.archanaskitchen.com/images/archanaskitchen/basic_recipes/Amazing_Non_Veg_Appetizers__Starters_For_Your_New_Year_Party.jpg">
+</header>
+<h1>VEG STARTERS</h1>
+<section class="menu">
+    <div class="menu-item">
+        <img src="https://rainbowplantlife.com/wp-content/uploads/2022/02/Gobi-Manchurian-cover-photo-on-white-tile-1-of-1.jpg" alt="Gobi Manchurian">
+        <div class="content">
+            <h3>Gobi Manchurian</h3>
+            <p>An Indo-Chinese appetizer and this version will blow your mind!</p>
+            <p class="price">₹90</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="https://www.spiceindiaonline.com/files/images/Chilli%20Gobi.jpg.preview.JPG" alt="Gobi Chilli ">
+        <div class="content">
+            <h3>Gobi chilli</h3>
+            <p> A spicy starter or appetizer recipe adapted from Chinese cuisine and seasoning techniques.</p>
+            <p class="price">₹90</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="https://img.freepik.com/premium-photo/mushroom-manchurian-dried-black-bowl-dark-background-indo-chinese-dish-with-fried-mushrooms-peppe_908985-33517.jpg" alt="Mushroom Manchurian">
+        <div class="content">
+            <h3>Mushroom Manchurian</h3>
+            <p>Mushroom Manchurian is a tasty saucy dish made by marinating mushroom with spice powders & cooking it with sauces, tomato & onions.</p>
+            <p class="price">₹110</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="https://1.bp.blogspot.com/-_QHI8lgj5n8/XuJ7chjrXYI/AAAAAAAAKQ0/tQuNDYLDYQ4YIhji0IVat-y7iLuutnVGwCLcBGAsYHQ/s1600/Chilli%2BMushroom%2BDry.JPG" alt="Mushroom Chilli">
+        
+        <div class="content">
+            <h3>Mushroom Chilli</h3>
+            <p>Chili Mushroom is a popular Indo-Chinese dish, often served as an appetizer or snack.</p>
+            <p class="price">₹110</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="https://cdn2.foodviva.com/static-content/food-images/chinese-recipes/baby-corn-manchurian/baby-corn-manchurian.jpg" alt="Baby Corn Manchurian">
+        <div class="content">
+            <h3>Baby Corn Manchurian</h3>
+            <p>Baby Corn Manchurian is crispy crunchy fried baby corn, tossed in an extremely flavorful spicy, sweet and tangy Manchurian sauce.</p>
+            <p class="price">₹100</p>
+        </div>
+    </div>
+        <div class="menu-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-YI7VapSILTgOdqapVOLwVpErcXwrK2NY7Q&s" alt="Baby Corn Chilli ">
+            <div class="content">
+                <h3>Baby Corn Chilli </h3>
+                <p>An ideal appetiser or a party starter recipe made with tender baby corns in a chilli sauce.</p>
+                <p class="price">₹100</p>
+            </div>
+    </div>
+    <div class="menu-item">
+        <img src="https://vaya.in/recipes/wp-content/uploads/2018/03/Paneer-Manchurian.jpg" alt="Paneer Manchurian">
+        <div class="content">
+            <h3>Paneer Manchurian</h3>
+            <p>Crisp fried paneer tossed in Manchurian sauce.</p>
+            <p class="price">₹130</p>
+        </div>
+</div>
+<div class="menu-item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsY-Hux2hgO2-wedeBDsyMEIOw_WsJIrxYs9H-b3Phbn-q0g-34FeZc3AiyQ2iPAiGQaI&usqp=CAU" alt="Paneer Chilli ">
+    <div class="content">
+        <h3>Paneer Chilli</h3>
+        <p> It's a great appetizer or side dish and is loved for its perfect balance of flavors—spicy, tangy, and slightly sweet.</p>
+        <p class="price">₹130</p>
+    </div>
+</div>
+</div>
+</section>
+
+<h1>EGG STARTERS</h1>
+<div class="menu-item">
+    <img src="https://www.sweetashoney.co/wp-content/uploads/Omelette-2.jpg" alt="Egg Omlet">
+    <div class="content">
+        <h3>Egg Omlet</h3>
+        <p>An egg dish that's folded in half and filled with cheese, meat, or vegetables. </p>
+        <p class="price">₹50</p>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgpDPizX6nGLyzXnHWHrHm6J38ac1u0mGgYw&s" alt="Egg Bhurgi ">
+    <div class="content">
+        <h3>Egg Bhurgi</h3>
+        <p>A popular and flavorful dish in Indian cuisine. It is made by scrambling eggs with a variety of spices and vegetables.</p>
+        <p class="price">₹50</p>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="https://c.ndtvimg.com/2021-01/rlten3n8_manchurian_625x300_27_January_21.jpg?im=FaceCrop,algorithm=dnn,width=1200,height=886" alt="Egg Manchurian">
+    <div class="content">
+        <h3>Egg Manchurian</h3>
+        <p>A perfect fusion dish with crispy eggs in a flavorful, aromatic sauce.</p>
+        <p class="price">₹80</p>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="https://static.toiimg.com/thumb/88273871.cms?imgsize=164852&width=800&height=800" alt="Egg Chilli">
+    <div class="content">
+        <h3>Egg Chilli</h3>
+        <p> An excellent combination of heat, flavor, and a slight sweetness from the sauce.</p>
+        <p class="price">₹80</p>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="https://www.hyderabadiruchulu.com/wp-content/uploads/2017/12/01-3.png" alt="Egg Pepper Dry">
+    <div class="content">
+        <h3>Egg Pepper Dry</h3>
+        <p>A dry, tangy, and mildly spicy dish that pairs well with rice, chapati, or naan.</p>
+        <p class="price">₹90</p>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUYTq22eZBPTgVLxrcl84Zdff_RAYzKHL4EAYWe2ygiw5ou-TqJzT_1kOWJW6jiAqmOh4&usqp=CAU" alt="Egg 65">
+    <div class="content">
+        <h3>Egg 65</h3>
+        <p>Made with boiled eggs that are marinated in a flavorful mix of spices and then deep-fried to a golden crisp.</p>
+        <p class="price">₹130</p>
+    </div>
+</div>
+</section>
+
+<h1>NON-VEG STARTERS</h1>
+<h2>TANDOORI STARTERS</h2>
+<section class="menu">
+    <div class="menu-item">
+        <img src="https://onestophalal.com/cdn/shop/articles/air_fryer_chicken_tandoori-1694242200588_1200x.jpg?v=1694242335" alt="Tandoori Chicken">
+        <div class="content">
+            <h3>Tandoori Chicken</h3>
+            <p>Chicken is marinated in a mixture of yogurt and spices, then traditionally cooked in a tandoor (clay oven) for that smoky flavor.</p>
+            <p class="price">₹350</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToMozkkZv6pQonP3nn1BlXT2uLTWJxeshxYA&s" alt="Grill Chicken">
+        <div class="content">
+            <h3>Grill Chicken</h3>
+            <p>Grilled Chicken is a versatile and flavorful dish that is easy to prepare and can be customized with various marinades and seasonings.</p>
+            <p class="price">₹350</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="" alt="Alfham Chicken">
+        <div class="content">
+            <h3></h3>
+            <p>Alfham Chicken</p>
+            <p class="price">₹390</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="https://1.bp.blogspot.com/-_QHI8lgj5n8/XuJ7chjrXYI/AAAAAAAAKQ0/tQuNDYLDYQ4YIhji0IVat-y7iLuutnVGwCLcBGAsYHQ/s1600/Chilli%2BMushroom%2BDry.JPG" alt="Mushroom Chilli">
+        
+        <div class="content">
+            <h3>Mushroom Chilli</h3>
+            <p>Chili Mushroom is a popular Indo-Chinese dish, often served as an appetizer or snack.</p>
+            <p class="price">₹110</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="https://cdn2.foodviva.com/static-content/food-images/chinese-recipes/baby-corn-manchurian/baby-corn-manchurian.jpg" alt="Baby Corn Manchurian">
+        <div class="content">
+            <h3>Baby Corn Manchurian</h3>
+            <p>Baby Corn Manchurian is crispy crunchy fried baby corn, tossed in an extremely flavorful spicy, sweet and tangy Manchurian sauce.</p>
+            <p class="price">₹100</p>
+        </div>
+    </div>
+        <div class="menu-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-YI7VapSILTgOdqapVOLwVpErcXwrK2NY7Q&s" alt="Baby Corn Chilli ">
+            <div class="content">
+                <h3>Baby Corn Chilli </h3>
+                <p>An ideal appetiser or a party starter recipe made with tender baby corns in a chilli sauce.</p>
+                <p class="price">₹100</p>
+            </div>
+    </div>
+    <div class="menu-item">
+        <img src="https://vaya.in/recipes/wp-content/uploads/2018/03/Paneer-Manchurian.jpg" alt="Paneer Manchurian">
+        <div class="content">
+            <h3>Paneer Manchurian</h3>
+            <p>Crisp fried paneer tossed in Manchurian sauce.</p>
+            <p class="price">₹130</p>
+        </div>
+</div>
+<div class="menu-item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsY-Hux2hgO2-wedeBDsyMEIOw_WsJIrxYs9H-b3Phbn-q0g-34FeZc3AiyQ2iPAiGQaI&usqp=CAU" alt="Paneer Chilli ">
+    <div class="content">
+        <h3>Paneer Chilli</h3>
+        <p> It's a great appetizer or side dish and is loved for its perfect balance of flavors—spicy, tangy, and slightly sweet.</p>
+        <p class="price">₹130</p>
+    </div>
+</div>
+</div>
+
+<h1>EGG STARTERS</h1>
+<div class="menu-item">
+    <img src="https://www.sweetashoney.co/wp-content/uploads/Omelette-2.jpg" alt="Egg Omlet">
+    <div class="content">
+        <h3>Egg Omlet</h3>
+        <p>An egg dish that's folded in half and filled with cheese, meat, or vegetables. </p>
+        <p class="price">₹50</p>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgpDPizX6nGLyzXnHWHrHm6J38ac1u0mGgYw&s" alt="Egg Bhurgi ">
+    <div class="content">
+        <h3>Egg Bhurgi</h3>
+        <p>A popular and flavorful dish in Indian cuisine. It is made by scrambling eggs with a variety of spices and vegetables.</p>
+        <p class="price">₹50</p>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="https://c.ndtvimg.com/2021-01/rlten3n8_manchurian_625x300_27_January_21.jpg?im=FaceCrop,algorithm=dnn,width=1200,height=886" alt="Egg Manchurian">
+    <div class="content">
+        <h3>Egg Manchurian</h3>
+        <p>A perfect fusion dish with crispy eggs in a flavorful, aromatic sauce.</p>
+        <p class="price">₹80</p>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="https://static.toiimg.com/thumb/88273871.cms?imgsize=164852&width=800&height=800" alt="Egg Chilli">
+    <div class="content">
+        <h3>Egg Chilli</h3>
+        <p> An excellent combination of heat, flavor, and a slight sweetness from the sauce.</p>
+        <p class="price">₹80</p>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="https://www.hyderabadiruchulu.com/wp-content/uploads/2017/12/01-3.png" alt="Egg Pepper Dry">
+    <div class="content">
+        <h3>Egg Pepper Dry</h3>
+        <p>A dry, tangy, and mildly spicy dish that pairs well with rice, chapati, or naan.</p>
+        <p class="price">₹90</p>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUYTq22eZBPTgVLxrcl84Zdff_RAYzKHL4EAYWe2ygiw5ou-TqJzT_1kOWJW6jiAqmOh4&usqp=CAU" alt="Egg 65">
+    <div class="content">
+        <h3>Egg 65</h3>
+        <p>Made with boiled eggs that are marinated in a flavorful mix of spices and then deep-fried to a golden crisp.</p>
+        <p class="price">₹130</p>
+    </div>
+</div>
+
+
+</section>
+
+<footer>
+    <p>&copy; 2024 5-Star Hotel | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
