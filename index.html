@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -396,47 +396,60 @@
 
 
 </section>
-<div id="cart">
-    <h3>Shopping Cart</h3>
-    <p id="cart-items">No items yet</p>
+<h2>Your Cart</h2>
+<section id="cart-section">
+    <ul id="cart-list">
+        <!-- Cart items will appear here -->
+    </ul>
     <p id="cart-total">Total: ₹0</p>
-</div>
+</section>
 <footer>
     <p>&copy; 2024 5-Star Hotel | All Rights Reserved</p>
 </footer>
-
 <script>
-    // Get all add-to-cart buttons
-    const addToCartButtons = document.querySelectorAll('.add-to-cart');
-
-    // Cart data
+    // Cart array to store added items
     let cart = [];
-    let totalPrice = 0;
 
-    // Add item to the cart
-    function addToCart(event) {
-        const menuItem = event.target.closest('.menu-item');
-        const price = parseInt(menuItem.getAttribute('data-price'));
-        cart.push(price);
-        totalPrice += price;
+    // Function to add item to the cart
+    function addToCart(itemName, itemPrice) {
+        // Create an object for the item
+        const item = {
+            name: itemName,
+            price: itemPrice
+        };
 
+        // Add item to the cart
+        cart.push(item);
         updateCart();
     }
 
-    // Update the cart display
+    // Function to update the cart display
     function updateCart() {
-        const cartItems = document.getElementById('cart-items');
+        const cartList = document.getElementById('cart-list');
         const cartTotal = document.getElementById('cart-total');
-        
-        if (cart.length > 0) {
-            cartItems.textContent = Items: ${cart.length};
-            cartTotal.textContent = Total: ₹${totalPrice};
-        } 
-    }
 
-    // Add event listeners to each add-to-cart button
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', addToCart);
+        // Clear the current list
+        cartList.innerHTML = '';
+        let total = 0;
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = ${item.name} - ₹${item.price};
+            cartList.appendChild(li);
+            total += item.price;
+        });
+
+        // Update the total price
+        cartTotal.textContent = Total: ₹${total};
+    }
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            const menuItem = this.closest('.menu-item');
+            const name = menuItem.getAttribute('data-name');
+            const price = parseInt(menuItem.getAttribute('data-price'));
+
+            // Call the addToCart function
+            addToCart(name, price);
+        });
     });
 </script>
 
