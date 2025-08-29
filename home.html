@@ -1,0 +1,91 @@
+
+<body>
+  <!-- Background -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Header -->
+  <header>
+    <h1>Namitha R</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="theme-toggle" id="themeToggle">🌙</div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <h2>Hi, I'm Namitha 👋</h2>
+    <p>AI/ML Engineer & Web Developer</p>
+    <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View Projects</button>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm a CSE student passionate about Artificial Intelligence, Machine Learning, and Web Development.  
+       I love building accessible, real-world applications using modern tools and frameworks.</p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="card">
+        <h3>LearnMate – Agentic AI</h3>
+        <p>Personalized course pathway generator using IBM Watsonx foundation models.</p>
+        <a href="https://github.com/namitha2526/LearnMate" target="_blank">GitHub</a>
+      </div>
+      <div class="card">
+        <h3>AI Interview Bot</h3>
+        <p>Web app that simulates interviews with AI-powered Q&A.</p>
+        <a href="https://github.com/namitha2526/AI-Interview-Bot" target="_blank">GitHub</a>
+      </div>
+      <div class="card">
+        <h3>JarrvisAI</h3>
+        <p>Python desktop voice assistant for automation and queries.</p>
+        <a href="https://github.com/namitha2526/JarrvisAI" target="_blank">GitHub</a>
+      </div>
+      <div class="card">
+        <h3>Thalassemia Prediction Model</h3>
+        <p>ML model predicting risk of thalassemia in offspring.</p>
+        <a href="https://github.com/namitha2526/Thalassemia-Prediction" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="skill">Python</div>
+      <div class="skill">Java</div>
+      <div class="skill">C</div>
+      <div class="skill">Machine Learning</div>
+      <div class="skill">Deep Learning</div>
+      <div class="skill">Flask</div>
+      <div class="skill">HTML/CSS/JS</div>
+      <div class="skill">Power BI</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:nnnamitha26@gmaiil.com">nnnamitha26@gmaiil.com</a></p>
+    <p>
+      <a href="https://www.linkedin.com/in/namitha-r-b52799310/" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/namitha2526" target="_blank">GitHub</a>
+    </p>
+    <a href="assets/Namitha_R_Resume.pdf" class="btn" download>Download Resume</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Namitha R. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
