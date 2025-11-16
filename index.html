@@ -2,43 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Namitha R — Portfolio</title>
-
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Namitha R — AI/ML Engineer & Full-Stack Developer</title>
+  <meta name="description" content="Namitha R — Portfolio: AI/ML projects, agentic AI, voice assistants, ML pipelines, workshops, hackathons, and technical journey." />
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- Meta / SEO -->
-  <meta name="description" content="Namitha R — AI/ML Engineer & Full-Stack Developer. Portfolio showcasing AI agents, ML models, voice assistants and full-stack projects." />
-
   <style>
     :root{
-      --bg:#0b1020;
-      --panel:#0f1724;
-      --muted:#94a3b8;
-      --accent:#7c3aed;
-      --accent-2:#4f46e5;
-      --glass: rgba(255,255,255,0.04);
+      --bg-900: #060814;
+      --bg-800: #0b1020;
+      --panel: #0f1724;
+      --muted: #94a3b8;
+      --accent: #7c3aed;
+      --accent-2: #4f46e5;
       --card-border: rgba(255,255,255,0.06);
-      --radius:14px;
-      --max-width:1100px;
+      --glass: rgba(255,255,255,0.03);
+      --radius: 14px;
+      --max-width: 1150px;
+      --glass-strong: rgba(255,255,255,0.06);
+      --tt: 180ms;
     }
 
     /* Reset & base */
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
     body{
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: linear-gradient(180deg,var(--bg) 0%, #071024 100%);
+      font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg-800) 0%, #071024 100%);
       color:#e6eef8;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
       overflow-x:hidden;
-      line-height:1.45;
-      min-height:100vh;
     }
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block;border-radius:8px}
+    img{max-width:100%;display:block}
 
     /* Header */
     header{
@@ -47,23 +45,26 @@
       backdrop-filter: blur(8px);z-index:1200;border-bottom:1px solid rgba(255,255,255,0.02)
     }
     .brand{display:flex;align-items:center;gap:14px}
-    .brand h1{font-family:'Space Grotesk', 'Inter';font-weight:700;font-size:18px;color:var(--accent-2);letter-spacing:0.4px;margin:0}
+    .brand .logo{
+      width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:inline-flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:18px;
+      box-shadow:0 6px 18px rgba(79,70,229,0.18)
+    }
+    .brand h1{font-family:'Space Grotesk','Inter';font-weight:700;font-size:18px;color:var(--accent-2);letter-spacing:0.4px;margin:0}
     nav{display:flex;gap:18px;align-items:center}
-    nav a{font-weight:600;color:var(--muted);padding:8px 10px;border-radius:8px;transition:all .18s}
+    nav a{font-weight:600;color:var(--muted);padding:8px 10px;border-radius:8px;transition:all var(--tt)}
     nav a:hover{color:#fff;background:rgba(255,255,255,0.03);transform:translateY(-2px)}
-
-    /* Theme toggle */
     .theme-toggle{cursor:pointer;font-size:18px;padding:6px;border-radius:8px;color:var(--muted);background:transparent;border:1px solid rgba(255,255,255,0.02)}
     .theme-toggle:hover{color:#fff}
 
-    /* Main layout */
-    main{max-width:var(--max-width);margin:0 auto;padding:110px 20px 60px}
+    /* Container/Main */
+    main{max-width:var(--max-width);margin:0 auto;padding:110px 20px 80px}
     section{padding:60px 0;display:block}
     .section-title{font-size:20px;font-weight:700;color:#dbeafe;margin-bottom:18px}
 
     /* HERO */
     .hero{display:flex;gap:48px;align-items:center;justify-content:space-between}
-    .hero-left{flex:1;max-width:680px}
+    .hero-left{flex:1;max-width:720px}
     .hero h2{font-family:'Space Grotesk';font-size:44px;line-height:1.02;margin-bottom:12px;color:#ffffff}
     .hero p.lead{color:var(--muted);font-size:17px;margin-bottom:20px}
     .hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
@@ -75,23 +76,19 @@
     .btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(79,70,229,0.18)}
     .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
 
-    .hero-right{width:360px;min-width:260px}
+    .hero-right{width:380px;min-width:260px}
     .card-hero{
       background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       border-radius:18px;padding:18px;border:1px solid var(--card-border);box-shadow:0 8px 30px rgba(2,6,23,0.6)
     }
-    .avatar{
-      width:76px;height:76px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      display:inline-flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:28px;margin-right:14px;
-    }
     .hero-meta{display:flex;align-items:center;margin-bottom:12px}
-    .hero-stat{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-weight:600}
+    .hero-stat{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-weight:600;font-size:13px}
 
-    /* Projects grid */
+    /* Projects */
     .projects-grid{
       display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px
     }
-    @media (max-width:880px){ .projects-grid{grid-template-columns:1fr} .hero{flex-direction:column;align-items:flex-start} .hero-right{width:100%} .hero h2{font-size:32px} }
+    @media (max-width:980px){ .projects-grid{grid-template-columns:1fr} .hero{flex-direction:column;align-items:flex-start} .hero-right{width:100%} .hero h2{font-size:32px} }
     .card{
       background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       border-radius:12px;padding:18px;border:1px solid var(--card-border);transition:transform .18s,box-shadow .18s;
@@ -99,48 +96,66 @@
     .card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
     .card h3{font-size:18px;margin-bottom:8px;color:#fff}
     .card p{color:var(--muted);font-size:14px;margin-bottom:12px}
-    .card .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
     .tag{font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
 
     .project-cta{display:flex;gap:10px;align-items:center}
 
-    /* Skills */
-    .skills-grid{display:flex;flex-wrap:wrap;gap:12px}
+    /* Timeline (vertical) */
+    .timeline{position:relative;padding-left:26px}
+    .timeline:before{
+      content:'';position:absolute;left:8px;top:0;width:3px;height:100%;background:linear-gradient(180deg,var(--accent),var(--accent-2));border-radius:4px;opacity:0.18;
+    }
+    .timeline-item{position:relative;margin-bottom:28px;padding-left:18px}
+    .timeline-dot{
+      position:absolute;left:-6px;top:4px;width:16px;height:16px;border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 6px 18px rgba(124,58,237,0.14);
+      border:3px solid rgba(0,0,0,0.18)
+    }
+    .timeline-item h4{font-size:15px;margin-bottom:6px}
+    .timeline-item p{color:var(--muted);font-size:14px}
+
+    /* Skills expanded */
+    .skills-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
     .skill{
       padding:8px 14px;border-radius:999px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       border:1px solid rgba(255,255,255,0.03);font-weight:600;color:var(--muted);font-size:13px
     }
+
+    /* Workshops/hackathons */
+    .card-compact{padding:14px;border-radius:12px;border:1px solid var(--card-border);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+    .meta-list{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:13px}
 
     /* Contact */
     .contact-card{
       background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       padding:18px;border-radius:12px;border:1px solid var(--card-border);display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap
     }
-    .contact-left p{color:var(--muted);margin-bottom:8px}
     .download-resume{padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff;font-weight:700}
 
     /* Footer */
     footer{padding:28px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);margin-top:40px}
 
-    /* Utilities */
+    /* Micro utilities */
     .muted{color:var(--muted)}
     .container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 20px}
+    .small{font-size:13px;color:var(--muted)}
 
-    /* Accessibility focus */
-    a:focus, button:focus {outline:3px solid rgba(124,58,237,0.18);outline-offset:3px}
-
-    /* Particle canvas sits behind everything */
-    #bgCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;display:block}
-
-    /* Light theme (optional) */
+    /* Light theme */
     body.light{
       background:linear-gradient(180deg,#f7f9fc 0%, #eef2ff 100%);
       color:#0b1220;
     }
     body.light nav a{color:#475569}
     body.light .card, body.light .card-hero, body.light .contact-card{background:linear-gradient(180deg, rgba(2,6,23,0.02), rgba(2,6,23,0.01));border:1px solid rgba(0,0,0,0.06)}
-    body.light header{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));border-bottom:1px solid rgba(2,6,23,0.03)}
+    body.light header{background:linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,255,255,0.98));border-bottom:1px solid rgba(2,6,23,0.03)}
     body.light .muted{color:#475569}
+
+    /* Accessibility focus */
+    a:focus, button:focus {outline:3px solid rgba(124,58,237,0.18);outline-offset:3px}
+
+    /* Particle canvas */
+    #bgCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;display:block}
   </style>
 </head>
 <body>
@@ -150,13 +165,15 @@
   <!-- Header -->
   <header role="banner">
     <div class="brand" aria-hidden="false">
-      <div class="avatar" aria-hidden="true">NR</div>
+      <div class="logo" aria-hidden="true">NR</div>
       <h1>Namitha R</h1>
     </div>
 
     <nav role="navigation" aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#timeline">Journey</a>
+      <a href="#workshops">Workshops</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
       <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">🌙</button>
@@ -168,28 +185,33 @@
     <section id="home" class="hero" aria-labelledby="hero-heading">
       <div class="hero-left">
         <h2 id="hero-heading">Hi, I'm Namitha 👋</h2>
-        <p class="lead">AI/ML Engineer & Full-Stack Developer. I build intelligent, production-ready applications — AI agents, ML pipelines, voice-enabled tools, and full-stack systems focused on real-world impact.</p>
+        <p class="lead">AI/ML Engineer & Full-Stack Developer. I build intelligent, production-ready applications — AI agents, ML pipelines, voice-enabled tools, and full-stack systems focused on real-world impact and accessibility.</p>
         <div class="hero-actions">
           <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View Projects</button>
           <a class="btn ghost" href="#contact">Contact Me</a>
           <a class="btn ghost" href="assets/Namitha_R_Resume.pdf" download aria-label="Download resume">Download Resume</a>
+        </div>
+        <div style="margin-top:18px" class="meta-list">
+          <div class="small">CSE Student • Remote-ready</div>
+          <div class="small">AI Agents • Web • Voice</div>
+          <div class="small">Portfolio v2.0 — 2025</div>
         </div>
       </div>
 
       <aside class="hero-right" aria-labelledby="hero-stats">
         <div class="card-hero" role="region" aria-label="Profile card">
           <div class="hero-meta">
-            <div class="avatar" aria-hidden="true">NR</div>
+            <div class="logo" aria-hidden="true" style="width:76px;height:76px;border-radius:12px;font-size:28px">NR</div>
             <div>
               <div style="font-weight:700;color:#fff">Namitha R</div>
-              <div class="muted" style="font-size:13px;margin-top:4px">AI/ML Engineer • Full-Stack Developer</div>
+              <div class="muted" style="font-size:13px;margin-top:6px">AI/ML Engineer • Full-Stack Developer</div>
             </div>
           </div>
 
-          <div class="hero-stat" id="hero-stats" style="margin-top:6px">
-            <div class="muted">CSE Student</div>
-            <div class="muted">Remote-ready</div>
-            <div class="muted">Open to internships</div>
+          <div class="hero-stat" id="hero-stats">
+            <div class="muted">Projects: LearnMate, AI Interview Bot, JarrvisAI, Thalassemia Predictor</div>
+            <div class="muted">Workshops: Google AI Agent Intensive, IBM SkillsBuild</div>
+            <div class="muted">Open to internships & collaborations</div>
           </div>
         </div>
       </aside>
@@ -198,36 +220,53 @@
     <!-- ABOUT -->
     <section id="about" aria-labelledby="about-title">
       <h2 id="about-title" class="section-title">About Me</h2>
-      <p style="max-width:820px;margin:0 auto;color:var(--muted);font-size:15px">
-        I’m a Computer Science and Engineering student with hands-on experience building AI agents, ML models, and full-stack applications. I focus on delivering accessible, production-minded solutions — from prompt-engineered agents with IBM Watsonx to voice-driven desktop tools and end-to-end web deployments.
+      <p style="max-width:920px;margin:0 auto;color:var(--muted);font-size:15px">
+        I’m a Computer Science and Engineering student who builds intelligent systems that solve real problems. From early scripting and automation, I progressed to building voice-based assistants, ML models, and agentic AI workflows. My projects prioritize accessibility, real-world impact, and production-focused engineering.
       </p>
+
+      <div style="max-width:920px;margin:18px auto 0;display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start">
+        <div style="flex:1;min-width:260px">
+          <h4 style="margin-bottom:8px">My Focus</h4>
+          <ul class="small muted" style="list-style:disc;margin-left:18px">
+            <li>Agentic AI & Prompt Engineering</li>
+            <li>ML Pipelines & Model Evaluation</li>
+            <li>Accessible voice-driven applications</li>
+            <li>End-to-end full-stack integration</li>
+          </ul>
+        </div>
+
+        <div style="flex:1;min-width:260px">
+          <h4 style="margin-bottom:8px">What I Value</h4>
+          <p class="small muted">Fast execution, clean architecture, measurable impact, and delivering intuitive UX for real users — not just demos.</p>
+        </div>
+      </div>
     </section>
 
     <!-- PROJECTS -->
     <section id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title" class="section-title">Projects</h2>
+      <h2 id="projects-title" class="section-title">Featured Projects</h2>
 
       <div class="projects-grid" role="list">
         <article class="card" role="listitem" aria-labelledby="proj1-title">
           <h3 id="proj1-title">LearnMate — Agentic AI for Course Pathways</h3>
-          <p>AI agent that generates personalized learning paths using IBM Watsonx Prompt Lab, Runtime, and foundation models. Complete frontend–backend workflow with orchestration and prompt pipelines.</p>
+          <p>End-to-end AI agent that generates personalized learning paths using IBM Watsonx Prompt Lab & Foundation Models. Implemented orchestration with Flask backend and a responsive frontend; built iterative prompt pipelines for better personalization.</p>
           <div class="tags" aria-hidden="true">
             <span class="tag">IBM Watsonx</span>
-            <span class="tag">Flask</span>
             <span class="tag">Prompt Engineering</span>
+            <span class="tag">Flask</span>
           </div>
           <div class="project-cta">
-            <a href="https://github.com/namitha2526/LearnMate" target="_blank" rel="noopener" aria-label="LearnMate on GitHub">View on GitHub</a>
+            <a href="https://github.com/namitha2526/LearnMate" target="_blank" rel="noopener">View on GitHub</a>
           </div>
         </article>
 
         <article class="card" role="listitem" aria-labelledby="proj2-title">
           <h3 id="proj2-title">AI Interview Bot</h3>
-          <p>AI-driven interview simulator that provides role-based Q&A and structured feedback. Full-stack web app with session management and scoring heuristics.</p>
+          <p>AI-driven interview simulator delivering context-aware Q&A and structured feedback. Built scoring heuristics, session management, and a user-friendly UI to simulate realistic interview flows.</p>
           <div class="tags" aria-hidden="true">
             <span class="tag">NLP</span>
-            <span class="tag">Flask</span>
-            <span class="tag">Frontend</span>
+            <span class="tag">Full-Stack</span>
+            <span class="tag">Deployable</span>
           </div>
           <div class="project-cta">
             <a href="https://github.com/namitha2526/AI-Interview-Bot" target="_blank" rel="noopener">GitHub</a>
@@ -236,10 +275,10 @@
 
         <article class="card" role="listitem" aria-labelledby="proj3-title">
           <h3 id="proj3-title">JarrvisAI — Desktop Voice Assistant</h3>
-          <p>Voice-enabled assistant for automation tasks, voice commands, and quick information retrieval. Integrates speech recognition, TTS and Python automation modules.</p>
+          <p>Voice-enabled assistant focused on automation for everyday tasks. Integrates speech recognition, TTS, and command handlers for quick automation — designed for accessibility and low-literacy users.</p>
           <div class="tags" aria-hidden="true">
             <span class="tag">Speech</span>
-            <span class="tag">Automation</span>
+            <span class="tag">TTS</span>
             <span class="tag">Python</span>
           </div>
           <div class="project-cta">
@@ -249,11 +288,11 @@
 
         <article class="card" role="listitem" aria-labelledby="proj4-title">
           <h3 id="proj4-title">Thalassemia Prediction Model</h3>
-          <p>ML model to predict thalassemia risk in offspring using feature engineering and classification pipelines. Includes model evaluation and preprocessing scripts.</p>
+          <p>Predictive ML model to estimate offspring thalassemia risk based on parental data. Built robust preprocessing, feature engineering, and evaluation pipelines. Focused on explainability and model validation.</p>
           <div class="tags" aria-hidden="true">
             <span class="tag">ML</span>
             <span class="tag">Pipelines</span>
-            <span class="tag">Evaluation</span>
+            <span class="tag">Data</span>
           </div>
           <div class="project-cta">
             <a href="https://github.com/namitha2526/Thalassemia-Prediction" target="_blank" rel="noopener">GitHub</a>
@@ -262,37 +301,115 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- TIMELINE / JOURNEY -->
+    <section id="timeline" aria-labelledby="timeline-title">
+      <h2 id="timeline-title" class="section-title">My Journey in Tech</h2>
+      <div class="timeline" style="max-width:960px;margin:0 auto">
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <h4>2022 — Foundations: Programming & Algorithms</h4>
+          <p class="small muted">Started with Python, C, and Java. Built small scripts and learned core data-structures and algorithms.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <h4>2023 — First ML Projects & Automation</h4>
+          <p class="small muted">Built initial ML models and desktop automation scripts. Created JarrvisAI — a voice assistant prototype.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <h4>2024 — Formal Learning & Projects</h4>
+          <p class="small muted">Completed IBM SkillsBuild AI Fundamentals and improved model-building skills. Built Thalassemia prediction pipeline and participated in hackathons.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <h4>2025 — Agentic AI & Production Focus</h4>
+          <p class="small muted">Completed Google 5-Day AI Agent Intensive Workshop and built LearnMate — an agentic AI project using IBM Watsonx. Focused on pipelines and deployment-ready systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKSHOPS & HACKATHONS -->
+    <section id="workshops" aria-labelledby="workshops-title">
+      <h2 id="workshops-title" class="section-title">Workshops & Hackathons</h2>
+
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px">
+        <div class="card-compact">
+          <h4>Google — 5-Day AI Agent Intensive (2025)</h4>
+          <p class="small muted">Hands-on agent architecture, prompt engineering, tool chaining, evaluation and deployment. Implemented agent workflows and real use-case prototypes.</p>
+        </div>
+
+        <div class="card-compact">
+          <h4>IBM SkillsBuild — AI Fundamentals (2024)</h4>
+          <p class="small muted">Comprehensive course on ML concepts, neural networks, responsible AI and practical model evaluation. Produced extensive course report and exercises.</p>
+        </div>
+
+        <div class="card-compact">
+          <h4>Smart India / College Hackathons (2023-2024)</h4>
+          <p class="small muted">Built prototypes and pitched AI-driven solutions; focused on accessible UIs and rapid MVP development.</p>
+        </div>
+
+        <div class="card-compact">
+          <h4>AI-InnoBuild & Local Challenges</h4>
+          <p class="small muted">Created voice-enabled accessibility tools and received mentor feedback on usability and technical design.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS & TOOLS -->
     <section id="skills" aria-labelledby="skills-title">
-      <h2 id="skills-title" class="section-title">Skills</h2>
-      <div style="max-width:900px;margin:0 auto">
-        <div style="display:flex;gap:28px;flex-wrap:wrap;justify-content:center;">
-          <div style="min-width:260px">
-            <h4 style="margin-bottom:12px">Programming</h4>
-            <div class="skills-grid">
-              <div class="skill">Python</div>
-              <div class="skill">Java</div>
-              <div class="skill">C</div>
-            </div>
+      <h2 id="skills-title" class="section-title">Tools & Technologies</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+        <div class="card">
+          <h4>AI & ML</h4>
+          <div class="skills-grid" style="margin-top:12px">
+            <div class="skill">Python (NumPy/Pandas)</div>
+            <div class="skill">Scikit-learn</div>
+            <div class="skill">Transformers & NLP</div>
+            <div class="skill">Feature Engineering</div>
+            <div class="skill">Model Evaluation</div>
           </div>
+        </div>
 
-          <div style="min-width:260px">
-            <h4 style="margin-bottom:12px">AI & ML</h4>
-            <div class="skills-grid">
-              <div class="skill">Supervised Learning</div>
-              <div class="skill">NLP & Transformers</div>
-              <div class="skill">Prompt Engineering</div>
-            </div>
+        <div class="card">
+          <h4>Agents & Automation</h4>
+          <div class="skills-grid" style="margin-top:12px">
+            <div class="skill">Prompt Engineering</div>
+            <div class="skill">IBM Watsonx</div>
+            <div class="skill">Speech Recognition</div>
+            <div class="skill">TTS</div>
+            <div class="skill">Agent Workflows</div>
           </div>
+        </div>
 
-          <div style="min-width:260px">
-            <h4 style="margin-bottom:12px">Web & Tools</h4>
-            <div class="skills-grid">
-              <div class="skill">Flask</div>
-              <div class="skill">HTML/CSS/JS</div>
-              <div class="skill">Power BI</div>
-            </div>
+        <div class="card">
+          <h4>Web & Tools</h4>
+          <div class="skills-grid" style="margin-top:12px">
+            <div class="skill">Flask</div>
+            <div class="skill">HTML/CSS/JS</div>
+            <div class="skill">Power BI</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">Jupyter</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE (student-friendly) -->
+    <section id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title" class="section-title">Experience (Academic & Independent)</h2>
+
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <div class="card" style="flex:1;min-width:320px">
+          <h4>AI / ML Engineering — Projects (2023–2025)</h4>
+          <p class="small muted">Built and deployed models, designed pipelines, integrated ML with web services, and focused on explainability & validation. Responsibilities included data preprocessing, model selection, evaluation, and deployment-ready code.</p>
+        </div>
+
+        <div class="card" style="flex:1;min-width:320px">
+          <h4>Full-Stack Development — Projects & Integrations</h4>
+          <p class="small muted">Built frontend/backends using Flask + JS, created APIs for ML services, and implemented UI for non-technical users emphasizing accessibility and clarity.</p>
         </div>
       </div>
     </section>
@@ -316,15 +433,15 @@
     </section>
 
     <footer role="contentinfo">
-      <p>© 2025 Namitha R. All rights reserved.</p>
+      <p>© 2025 Namitha R. All rights reserved. Built with clarity, shipped with impact.</p>
     </footer>
   </main>
 
-  <!-- Minimal cursor for polish -->
+  <!-- Cursor for subtle polish -->
   <div id="cursor" aria-hidden="true" style="position:fixed;top:0;left:0;width:18px;height:18px;border-radius:50%;border:2px solid rgba(79,70,229,0.95);transform:translate(-50%,-50%);pointer-events:none;z-index:1500;opacity:0;transition:opacity .18s linear, transform .06s linear;"></div>
 
   <script>
-    /* Theme toggle */
+    /* ================= Theme toggle ================= */
     (function(){
       const toggle = document.getElementById('themeToggle');
       const body = document.body;
@@ -341,37 +458,37 @@
       });
     })();
 
-    /* Cursor (lightweight) */
+    /* ================= Cursor ================= */
     (function(){
       const cursor = document.getElementById('cursor');
       if(!cursor) return;
+      let hideTimer;
       window.addEventListener('mousemove', e => {
         cursor.style.left = e.clientX + 'px';
         cursor.style.top = e.clientY + 'px';
         cursor.style.opacity = 1;
-        // small pop effect
         cursor.style.transform = 'translate(-50%,-50%) scale(1.02)';
-        clearTimeout(window._cursorHide);
-        window._cursorHide = setTimeout(()=>{ cursor.style.opacity = 0; }, 1200);
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(()=>{ cursor.style.opacity = 0; }, 1200);
       });
       window.addEventListener('mouseout', ()=>{ cursor.style.opacity = 0; });
     })();
 
-    /* Background particles (optimized) */
+    /* ================= Particles (lightweight & performant) ================= */
     (function(){
       const canvas = document.getElementById('bgCanvas');
       if(!canvas) return;
       const ctx = canvas.getContext('2d');
       let W = canvas.width = innerWidth;
       let H = canvas.height = innerHeight;
-      const count = Math.max(30, Math.floor((W*H)/16000));
+      const count = Math.max(30, Math.floor((W*H)/18000));
       const particles = [];
       function rand(min,max){ return Math.random()*(max-min)+min }
       for(let i=0;i<count;i++){
         particles.push({
           x: Math.random()*W,
           y: Math.random()*H,
-          r: rand(0.7,2.2),
+          r: rand(0.7,2.4),
           vx: rand(-0.35,0.35),
           vy: rand(-0.25,0.25),
           alpha: rand(0.12,0.55)
@@ -400,7 +517,7 @@
       frame();
     })();
 
-    /* Smooth anchor scrolling for internal links */
+    /* ================= Smooth anchors ================= */
     (function(){
       document.querySelectorAll('a[href^="#"]').forEach(a=>{
         a.addEventListener('click', function(e){
@@ -410,20 +527,19 @@
           if(target){
             e.preventDefault();
             target.scrollIntoView({behavior:'smooth', block:'start'});
-            // update URL without jumping
             history.replaceState(null, '', href);
           }
         });
       });
     })();
 
-    /* Respect prefers-reduced-motion */
+    /* ================= Accessibility: prefers-reduced-motion ================= */
     (function(){
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if(prefersReduced){
         document.querySelectorAll('*').forEach(el=>{
-          el.style.transition = 'none !important';
-          el.style.animation = 'none !important';
+          el.style.transition = 'none';
+          el.style.animation = 'none';
         });
       }
     })();
