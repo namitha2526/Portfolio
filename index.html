@@ -1,175 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Namitha R - Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Namitha R — Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Meta / SEO -->
+  <meta name="description" content="Namitha R — AI/ML Engineer & Full-Stack Developer. Portfolio showcasing AI agents, ML models, voice assistants and full-stack projects." />
+
   <style>
-    /* ===== Base Styles ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #0d1117; color: #fff; overflow-x: hidden; scroll-behavior: smooth; }
-    a { color: inherit; text-decoration: none; }
+    :root{
+      --bg:#0b1020;
+      --panel:#0f1724;
+      --muted:#94a3b8;
+      --accent:#7c3aed;
+      --accent-2:#4f46e5;
+      --glass: rgba(255,255,255,0.04);
+      --card-border: rgba(255,255,255,0.06);
+      --radius:14px;
+      --max-width:1100px;
+    }
 
-    header { position: fixed; top:0; left:0; width:100%; background:rgba(0,0,0,0.6); display:flex; justify-content:space-between; align-items:center; padding:15px 40px; z-index:1000; }
-    header h1 { font-size:22px; }
-    nav a { margin:0 15px; font-weight:bold; cursor:pointer; }
+    /* Reset & base */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg) 0%, #071024 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow-x:hidden;
+      line-height:1.45;
+      min-height:100vh;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;border-radius:8px}
 
-    section { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:60px 20px; text-align:center; }
-    .hero h2 { font-size:40px; margin-bottom:15px; }
-    .btn { padding:12px 25px; border:none; border-radius:6px; cursor:pointer; background:#007bff; color:#fff; font-weight:bold; margin-top:20px; }
-    .btn:hover { background:#0056b3; }
+    /* Header */
+    header{
+      position:fixed;inset:0 0 auto 0;height:72px;display:flex;align-items:center;
+      justify-content:space-between;padding:0 28px;background:linear-gradient(180deg, rgba(10,12,20,0.6), rgba(10,12,20,0.35));
+      backdrop-filter: blur(8px);z-index:1200;border-bottom:1px solid rgba(255,255,255,0.02)
+    }
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand h1{font-family:'Space Grotesk', 'Inter';font-weight:700;font-size:18px;color:var(--accent-2);letter-spacing:0.4px;margin:0}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{font-weight:600;color:var(--muted);padding:8px 10px;border-radius:8px;transition:all .18s}
+    nav a:hover{color:#fff;background:rgba(255,255,255,0.03);transform:translateY(-2px)}
 
-    .projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; width:100%; max-width:1000px; margin-top:30px; }
-    .card { background:rgba(255,255,255,0.05); padding:20px; border-radius:12px; text-align:left; transition:transform .3s; }
-    .card:hover { transform:translateY(-8px); background:rgba(255,255,255,0.1); }
-    .card h3 { margin-bottom:10px; }
-    .card a { display:inline-block; margin-right:10px; color:#61dafb; font-weight:bold; }
+    /* Theme toggle */
+    .theme-toggle{cursor:pointer;font-size:18px;padding:6px;border-radius:8px;color:var(--muted);background:transparent;border:1px solid rgba(255,255,255,0.02)}
+    .theme-toggle:hover{color:#fff}
 
-    .skills-list { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin-top:20px; }
-    .skill { padding:10px 18px; border-radius:20px; background:rgba(255,255,255,0.1); }
+    /* Main layout */
+    main{max-width:var(--max-width);margin:0 auto;padding:110px 20px 60px}
+    section{padding:60px 0;display:block}
+    .section-title{font-size:20px;font-weight:700;color:#dbeafe;margin-bottom:18px}
 
-    footer { padding:30px; text-align:center; background:#111; }
+    /* HERO */
+    .hero{display:flex;gap:48px;align-items:center;justify-content:space-between}
+    .hero-left{flex:1;max-width:680px}
+    .hero h2{font-family:'Space Grotesk';font-size:44px;line-height:1.02;margin-bottom:12px;color:#ffffff}
+    .hero p.lead{color:var(--muted);font-size:17px;margin-bottom:20px}
+    .hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;
+      background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#fff;border:0;font-weight:700;cursor:pointer;
+      box-shadow:0 6px 20px rgba(79,70,229,0.14);transition:transform .14s ease, box-shadow .14s;
+    }
+    .btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(79,70,229,0.18)}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
 
-    /* Theme Toggle */
-    .theme-toggle { cursor:pointer; font-size:20px; }
+    .hero-right{width:360px;min-width:260px}
+    .card-hero{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:18px;padding:18px;border:1px solid var(--card-border);box-shadow:0 8px 30px rgba(2,6,23,0.6)
+    }
+    .avatar{
+      width:76px;height:76px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:inline-flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:28px;margin-right:14px;
+    }
+    .hero-meta{display:flex;align-items:center;margin-bottom:12px}
+    .hero-stat{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-weight:600}
 
-    body.light { background:#f5f5f5; color:#111; }
-    body.light header { background:rgba(255,255,255,0.9); }
-    body.light .card { background:rgba(0,0,0,0.05); }
-    body.light footer { background:#eee; }
+    /* Projects grid */
+    .projects-grid{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px
+    }
+    @media (max-width:880px){ .projects-grid{grid-template-columns:1fr} .hero{flex-direction:column;align-items:flex-start} .hero-right{width:100%} .hero h2{font-size:32px} }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;padding:18px;border:1px solid var(--card-border);transition:transform .18s,box-shadow .18s;
+    }
+    .card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
+    .card h3{font-size:18px;margin-bottom:8px;color:#fff}
+    .card p{color:var(--muted);font-size:14px;margin-bottom:12px}
+    .card .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+    .tag{font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
 
-    /* Cursor */
-    .cursor { position:fixed; top:0; left:0; width:20px; height:20px; border:2px solid #61dafb; border-radius:50%; transform:translate(-50%,-50%); pointer-events:none; z-index:2000; }
-    .cursor-trail { position:fixed; top:0; left:0; width:8px; height:8px; background:#61dafb; border-radius:50%; transform:translate(-50%,-50%); pointer-events:none; opacity:0.6; z-index:1500; }
+    .project-cta{display:flex;gap:10px;align-items:center}
 
-    /* Background Canvas */
-    #bgCanvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; }
+    /* Skills */
+    .skills-grid{display:flex;flex-wrap:wrap;gap:12px}
+    .skill{
+      padding:8px 14px;border-radius:999px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);font-weight:600;color:var(--muted);font-size:13px
+    }
+
+    /* Contact */
+    .contact-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:18px;border-radius:12px;border:1px solid var(--card-border);display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap
+    }
+    .contact-left p{color:var(--muted);margin-bottom:8px}
+    .download-resume{padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff;font-weight:700}
+
+    /* Footer */
+    footer{padding:28px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);margin-top:40px}
+
+    /* Utilities */
+    .muted{color:var(--muted)}
+    .container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 20px}
+
+    /* Accessibility focus */
+    a:focus, button:focus {outline:3px solid rgba(124,58,237,0.18);outline-offset:3px}
+
+    /* Particle canvas sits behind everything */
+    #bgCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;display:block}
+
+    /* Light theme (optional) */
+    body.light{
+      background:linear-gradient(180deg,#f7f9fc 0%, #eef2ff 100%);
+      color:#0b1220;
+    }
+    body.light nav a{color:#475569}
+    body.light .card, body.light .card-hero, body.light .contact-card{background:linear-gradient(180deg, rgba(2,6,23,0.02), rgba(2,6,23,0.01));border:1px solid rgba(0,0,0,0.06)}
+    body.light header{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));border-bottom:1px solid rgba(2,6,23,0.03)}
+    body.light .muted{color:#475569}
   </style>
 </head>
 <body>
-  <!-- Background -->
-  <canvas id="bgCanvas"></canvas>
+  <!-- Background Canvas -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
 
   <!-- Header -->
-  <header>
-    <h1>Namitha R</h1>
-    <nav>
+  <header role="banner">
+    <div class="brand" aria-hidden="false">
+      <div class="avatar" aria-hidden="true">NR</div>
+      <h1>Namitha R</h1>
+    </div>
+
+    <nav role="navigation" aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
+      <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">🌙</button>
     </nav>
-    <div class="theme-toggle" id="themeToggle">🌙</div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <h2>Hi, I'm Namitha 👋</h2>
-    <p>AI/ML Engineer & Web Developer</p>
-    <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View Projects</button>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I'm a CSE student passionate about Artificial Intelligence, Machine Learning, and Web Development.  
-       I love building accessible, real-world applications using modern tools and frameworks.</p>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="card">
-        <h3>LearnMate – Agentic AI</h3>
-        <p>Personalized course pathway generator using IBM Watsonx foundation models.</p>
-        <a href="https://github.com/namitha2526/LearnMate" target="_blank">GitHub</a>
+  <main class="container" role="main">
+    <!-- HERO -->
+    <section id="home" class="hero" aria-labelledby="hero-heading">
+      <div class="hero-left">
+        <h2 id="hero-heading">Hi, I'm Namitha 👋</h2>
+        <p class="lead">AI/ML Engineer & Full-Stack Developer. I build intelligent, production-ready applications — AI agents, ML pipelines, voice-enabled tools, and full-stack systems focused on real-world impact.</p>
+        <div class="hero-actions">
+          <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View Projects</button>
+          <a class="btn ghost" href="#contact">Contact Me</a>
+          <a class="btn ghost" href="assets/Namitha_R_Resume.pdf" download aria-label="Download resume">Download Resume</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>AI Interview Bot</h3>
-        <p>Web app that simulates interviews with AI-powered Q&A.</p>
-        <a href="https://github.com/namitha2526/AI-Interview-Bot" target="_blank">GitHub</a>
+
+      <aside class="hero-right" aria-labelledby="hero-stats">
+        <div class="card-hero" role="region" aria-label="Profile card">
+          <div class="hero-meta">
+            <div class="avatar" aria-hidden="true">NR</div>
+            <div>
+              <div style="font-weight:700;color:#fff">Namitha R</div>
+              <div class="muted" style="font-size:13px;margin-top:4px">AI/ML Engineer • Full-Stack Developer</div>
+            </div>
+          </div>
+
+          <div class="hero-stat" id="hero-stats" style="margin-top:6px">
+            <div class="muted">CSE Student</div>
+            <div class="muted">Remote-ready</div>
+            <div class="muted">Open to internships</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-title">About Me</h2>
+      <p style="max-width:820px;margin:0 auto;color:var(--muted);font-size:15px">
+        I’m a Computer Science and Engineering student with hands-on experience building AI agents, ML models, and full-stack applications. I focus on delivering accessible, production-minded solutions — from prompt-engineered agents with IBM Watsonx to voice-driven desktop tools and end-to-end web deployments.
+      </p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="section-title">Projects</h2>
+
+      <div class="projects-grid" role="list">
+        <article class="card" role="listitem" aria-labelledby="proj1-title">
+          <h3 id="proj1-title">LearnMate — Agentic AI for Course Pathways</h3>
+          <p>AI agent that generates personalized learning paths using IBM Watsonx Prompt Lab, Runtime, and foundation models. Complete frontend–backend workflow with orchestration and prompt pipelines.</p>
+          <div class="tags" aria-hidden="true">
+            <span class="tag">IBM Watsonx</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Prompt Engineering</span>
+          </div>
+          <div class="project-cta">
+            <a href="https://github.com/namitha2526/LearnMate" target="_blank" rel="noopener" aria-label="LearnMate on GitHub">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem" aria-labelledby="proj2-title">
+          <h3 id="proj2-title">AI Interview Bot</h3>
+          <p>AI-driven interview simulator that provides role-based Q&A and structured feedback. Full-stack web app with session management and scoring heuristics.</p>
+          <div class="tags" aria-hidden="true">
+            <span class="tag">NLP</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Frontend</span>
+          </div>
+          <div class="project-cta">
+            <a href="https://github.com/namitha2526/AI-Interview-Bot" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem" aria-labelledby="proj3-title">
+          <h3 id="proj3-title">JarrvisAI — Desktop Voice Assistant</h3>
+          <p>Voice-enabled assistant for automation tasks, voice commands, and quick information retrieval. Integrates speech recognition, TTS and Python automation modules.</p>
+          <div class="tags" aria-hidden="true">
+            <span class="tag">Speech</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Python</span>
+          </div>
+          <div class="project-cta">
+            <a href="https://github.com/namitha2526/JarrvisAI" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem" aria-labelledby="proj4-title">
+          <h3 id="proj4-title">Thalassemia Prediction Model</h3>
+          <p>ML model to predict thalassemia risk in offspring using feature engineering and classification pipelines. Includes model evaluation and preprocessing scripts.</p>
+          <div class="tags" aria-hidden="true">
+            <span class="tag">ML</span>
+            <span class="tag">Pipelines</span>
+            <span class="tag">Evaluation</span>
+          </div>
+          <div class="project-cta">
+            <a href="https://github.com/namitha2526/Thalassemia-Prediction" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
       </div>
-      <div class="card">
-        <h3>JarrvisAI</h3>
-        <p>Python desktop voice assistant for automation and queries.</p>
-        <a href="https://github.com/namitha2526/JarrvisAI" target="_blank">GitHub</a>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title" class="section-title">Skills</h2>
+      <div style="max-width:900px;margin:0 auto">
+        <div style="display:flex;gap:28px;flex-wrap:wrap;justify-content:center;">
+          <div style="min-width:260px">
+            <h4 style="margin-bottom:12px">Programming</h4>
+            <div class="skills-grid">
+              <div class="skill">Python</div>
+              <div class="skill">Java</div>
+              <div class="skill">C</div>
+            </div>
+          </div>
+
+          <div style="min-width:260px">
+            <h4 style="margin-bottom:12px">AI & ML</h4>
+            <div class="skills-grid">
+              <div class="skill">Supervised Learning</div>
+              <div class="skill">NLP & Transformers</div>
+              <div class="skill">Prompt Engineering</div>
+            </div>
+          </div>
+
+          <div style="min-width:260px">
+            <h4 style="margin-bottom:12px">Web & Tools</h4>
+            <div class="skills-grid">
+              <div class="skill">Flask</div>
+              <div class="skill">HTML/CSS/JS</div>
+              <div class="skill">Power BI</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Thalassemia Prediction Model</h3>
-        <p>ML model predicting risk of thalassemia in offspring.</p>
-        <a href="https://github.com/namitha2526/Thalassemia-Prediction" target="_blank">GitHub</a>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Contact</h2>
+
+      <div class="contact-card" role="region" aria-label="Contact information">
+        <div class="contact-left">
+          <p class="muted">Open to remote internships and collaborations in AI/ML engineering, data science, and full-stack development.</p>
+          <p style="margin:6px 0 0"><strong>Email:</strong> <a href="mailto:nnnamitha26@gmail.com">nnnamitha26@gmail.com</a></p>
+          <p style="margin:6px 0 0"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/namitha-r-b52799310/" target="_blank" rel="noopener">namitha-r</a></p>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center">
+          <a class="download-resume" href="assets/Namitha_R_Resume.pdf" download>Download Resume</a>
+          <a class="btn" href="https://github.com/namitha2526" target="_blank" rel="noopener">View GitHub</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-list">
-      <div class="skill">Python</div>
-      <div class="skill">Java</div>
-      <div class="skill">C</div>
-      <div class="skill">Machine Learning</div>
-      <div class="skill">Deep Learning</div>
-      <div class="skill">Flask</div>
-      <div class="skill">HTML/CSS/JS</div>
-      <div class="skill">Power BI</div>
-    </div>
-  </section>
+    <footer role="contentinfo">
+      <p>© 2025 Namitha R. All rights reserved.</p>
+    </footer>
+  </main>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:nnnamitha26@gmaiil.com">nnnamitha26@gmaiil.com</a></p>
-    <p>
-      <a href="https://www.linkedin.com/in/namitha-r-b52799310/" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/namitha2526" target="_blank">GitHub</a>
-    </p>
-    <a href="assets/Namitha_R_Resume.pdf" class="btn" download>Download Resume</a>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Namitha R. All Rights Reserved.</p>
-  </footer>
-
-  <!-- Cursor -->
-  <div class="cursor" id="cursor"></div>
+  <!-- Minimal cursor for polish -->
+  <div id="cursor" aria-hidden="true" style="position:fixed;top:0;left:0;width:18px;height:18px;border-radius:50%;border:2px solid rgba(79,70,229,0.95);transform:translate(-50%,-50%);pointer-events:none;z-index:1500;opacity:0;transition:opacity .18s linear, transform .06s linear;"></div>
 
   <script>
-    /* ===== Theme Toggle ===== */
-    const toggle = document.getElementById('themeToggle');
-    const body = document.body;
-    if(localStorage.getItem('theme')==='light') { body.classList.add('light'); toggle.textContent='🌞'; }
-    toggle.onclick = () => {
-      body.classList.toggle('light');
-      if(body.classList.contains('light')) { localStorage.setItem('theme','light'); toggle.textContent='🌞'; }
-      else { localStorage.setItem('theme','dark'); toggle.textContent='🌙'; }
-    };
+    /* Theme toggle */
+    (function(){
+      const toggle = document.getElementById('themeToggle');
+      const body = document.body;
+      const stored = localStorage.getItem('theme');
+      if (stored === 'light') { body.classList.add('light'); toggle.textContent = '🌞'; toggle.setAttribute('aria-pressed','true'); }
+      else { body.classList.remove('light'); toggle.textContent = '🌙'; toggle.setAttribute('aria-pressed','false'); }
 
-    /* ===== Cursor Effect ===== */
-    const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.style.top = e.clientY+'px';
-      cursor.style.left = e.clientX+'px';
-      const trail = document.createElement('div');
-      trail.className = 'cursor-trail';
-      document.body.appendChild(trail);
-      trail.style.top = e.clientY+'px';
-      trail.style.left = e.clientX+'px';
-      setTimeout(()=>{ trail.remove(); }, 500);
-    });
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('light');
+        const isLight = body.classList.contains('light');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        toggle.textContent = isLight ? '🌞' : '🌙';
+        toggle.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+      });
+    })();
 
-    /* ===== Background Animation ===== */
-    const canvas = document.getElementById('bgCanvas');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    function resizeCanvas(){ canvas.width=window.innerWidth; canvas.height=window.innerHeight; }
-    window.addEventListener('resize', resizeCanvas); resizeCanvas();
-    for(let i=0;i<50;i++){ particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-0.5)*1.5,vy:(Math.random()-0.5)*1.5}); }
-    function animate(){ ctx.clearRect(0,0,canvas.width,canvas.height); ctx.fillStyle='#61dafb'; particles.forEach(p=>{p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>canvas.width) p.vx*=-1; if(p.y<0||p.y>canvas.height) p.vy*=-1; ctx.beginPath(); ctx.arc(p.x,p.y,2,0,Math.PI*2); ctx.fill(); }); requestAnimationFrame(animate);}
-    animate();
+    /* Cursor (lightweight) */
+    (function(){
+      const cursor = document.getElementById('cursor');
+      if(!cursor) return;
+      window.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        cursor.style.opacity = 1;
+        // small pop effect
+        cursor.style.transform = 'translate(-50%,-50%) scale(1.02)';
+        clearTimeout(window._cursorHide);
+        window._cursorHide = setTimeout(()=>{ cursor.style.opacity = 0; }, 1200);
+      });
+      window.addEventListener('mouseout', ()=>{ cursor.style.opacity = 0; });
+    })();
+
+    /* Background particles (optimized) */
+    (function(){
+      const canvas = document.getElementById('bgCanvas');
+      if(!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let W = canvas.width = innerWidth;
+      let H = canvas.height = innerHeight;
+      const count = Math.max(30, Math.floor((W*H)/16000));
+      const particles = [];
+      function rand(min,max){ return Math.random()*(max-min)+min }
+      for(let i=0;i<count;i++){
+        particles.push({
+          x: Math.random()*W,
+          y: Math.random()*H,
+          r: rand(0.7,2.2),
+          vx: rand(-0.35,0.35),
+          vy: rand(-0.25,0.25),
+          alpha: rand(0.12,0.55)
+        });
+      }
+      window.addEventListener('resize', ()=>{
+        W = canvas.width = innerWidth;
+        H = canvas.height = innerHeight;
+      });
+      function frame(){
+        ctx.clearRect(0,0,W,H);
+        for(let p of particles){
+          p.x += p.vx; p.y += p.vy;
+          if(p.x < -10) p.x = W + 10;
+          if(p.x > W + 10) p.x = -10;
+          if(p.y < -10) p.y = H + 10;
+          if(p.y > H + 10) p.y = -10;
+          ctx.beginPath();
+          ctx.globalAlpha = p.alpha;
+          ctx.fillStyle = 'rgba(124,58,237,0.9)';
+          ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+          ctx.fill();
+        }
+        requestAnimationFrame(frame);
+      }
+      frame();
+    })();
+
+    /* Smooth anchor scrolling for internal links */
+    (function(){
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', function(e){
+          const href = this.getAttribute('href');
+          if(!href || href === '#') return;
+          const target = document.querySelector(href);
+          if(target){
+            e.preventDefault();
+            target.scrollIntoView({behavior:'smooth', block:'start'});
+            // update URL without jumping
+            history.replaceState(null, '', href);
+          }
+        });
+      });
+    })();
+
+    /* Respect prefers-reduced-motion */
+    (function(){
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(prefersReduced){
+        document.querySelectorAll('*').forEach(el=>{
+          el.style.transition = 'none !important';
+          el.style.animation = 'none !important';
+        });
+      }
+    })();
   </script>
 </body>
 </html>
